@@ -10,7 +10,7 @@ Uses the fantasic Code Mirror: http://codemirror.net/
 **Please note this is an Alpha / Proof of Concept**
 
 ##Screenshot
-![Tridion GUI extension in action](Capture.png "Extension in action")
+![Tridion GUI extension in action](https://github.com/rsleggett/tridion-mirror/raw/master/Capture.PNG "Extension in action")
 
 ##Installation Instructions
 
