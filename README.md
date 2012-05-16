@@ -4,6 +4,7 @@ Purpose: Add syntax highlighting to the source tab of a Template Building Block 
 Version 0.1 ALPHA  
 Author: Robert Stevenson-Leggett  
 Supports: SDL Tridion 2011  
+Licence: MIT
 
 Uses the fantasic Code Mirror: http://codemirror.net/
 
