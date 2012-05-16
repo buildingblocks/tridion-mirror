@@ -9,6 +9,9 @@ Uses the fantasic Code Mirror: http://codemirror.net/
 
 **Please note this is an Alpha / Proof of Concept**
 
+##Screenshot
+![Tridion GUI extension in action](Capture.png "Extension in action")
+
 ##Installation Instructions
 
  1. On build of the project, there is a post build event which copies the needed files to C:\Extensions\CodeMirrorExension
