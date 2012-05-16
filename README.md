@@ -16,11 +16,11 @@ Uses the fantasic Code Mirror: http://codemirror.net/
  3. In IIS, create a virtual directory under the %SDL Tridion 2011 Website%\Editors\ called CodeMirror pointing to the directory from Step 2.
  4. Add the following lines to the config in %TridionDir%\web\WebUI\WebRoot\Configuration\System.config
  
-    <editor name="CodeMirrorExtension" xmlns="http://www.sdltridion.com/2009/GUI/Configuration">
-		<installpath xmlns="http://www.sdltridion.com/2009/GUI/Configuration">C:\CodeMirrorExtension\</installpath>
-		<configuration xmlns="http://www.sdltridion.com/2009/GUI/Configuration">CodeMirrorExtension.config</configuration>
-		<vdir xmlns="http://www.sdltridion.com/2009/GUI/Configuration">CodeMirror</vdir>
-	</editor>
+        <editor name="CodeMirrorExtension" xmlns="http://www.sdltridion.com/2009/GUI/Configuration">
+		    <installpath xmlns="http://www.sdltridion.com/2009/GUI/Configuration">C:\CodeMirrorExtension\</installpath>
+		    <configuration xmlns="http://www.sdltridion.com/2009/GUI/Configuration">CodeMirrorExtension.config</configuration>
+		    <vdir xmlns="http://www.sdltridion.com/2009/GUI/Configuration">CodeMirror</vdir>
+	    </editor>
 	
  5. Go to your SDL Tridion 2011 URL and hit Ctrl+F5 to ensure the cache is clear.
  6. Open a Template Building Block, all being well you should see a new 'Enable Code Mirror' button on the Ribbon Toolbar.
