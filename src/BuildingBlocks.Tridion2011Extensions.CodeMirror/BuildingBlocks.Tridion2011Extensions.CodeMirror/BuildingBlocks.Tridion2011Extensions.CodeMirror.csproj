@@ -55,7 +55,9 @@
     <Content Include="Scripts\tridion-code-mirror-extension.js" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CodeMirrorExtension.config" />
+    <None Include="CodeMirrorExtension.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
