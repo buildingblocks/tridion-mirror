@@ -32,4 +32,5 @@ Uses the fantasic Code Mirror: http://codemirror.net/
  
 ## Known issues
 
- In this Alpha version, enabling the Code Mirror button while not on the Source Tab will cause the code in the Template Building Block to be hidden from view. Don't panic, just press the button twice and it will sort itself out.
+ * In this Alpha version, enabling the Code Mirror button while not on the Source Tab will cause the code in the Template Building Block to be hidden from view. Don't panic, just press the button twice and it will sort itself out.
+ * Tabbing multiple lines is broken
