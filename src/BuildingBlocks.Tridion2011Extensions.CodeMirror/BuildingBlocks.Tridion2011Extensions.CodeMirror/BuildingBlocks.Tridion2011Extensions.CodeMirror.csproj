@@ -45,11 +45,14 @@
   <ItemGroup>
     <Content Include="CSS\codemirror.css" />
     <Content Include="CSS\icon\icon.png" />
+    <Content Include="CSS\tridion-mirror.css" />
     <Content Include="Scripts\codemirror\clike.js" />
     <Content Include="Scripts\codemirror\codemirror.js" />
     <Content Include="Scripts\codemirror\css.js" />
     <Content Include="Scripts\codemirror\dreamweaver.js" />
+    <Content Include="Scripts\codemirror\formatting.js" />
     <Content Include="Scripts\codemirror\javascript.js" />
+    <Content Include="Scripts\codemirror\overlay.js" />
     <Content Include="Scripts\codemirror\php.js" />
     <Content Include="Scripts\codemirror\xml.js" />
     <Content Include="Scripts\tridion-code-mirror-extension.js" />

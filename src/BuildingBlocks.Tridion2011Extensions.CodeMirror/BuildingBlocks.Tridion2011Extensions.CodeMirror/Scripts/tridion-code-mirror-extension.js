@@ -13,6 +13,8 @@
     Author: Robert Stevenson-Leggett
 */
 
+
+
 Type.registerNamespace("Rob.Prototype.CodemirrorExtensions");
 
 Rob.Prototype.CodemirrorExtensions.EnableCodeMirror = function Rob$Prototype$CodemirrorExtensions$EnableCodemirror() {
@@ -21,6 +23,22 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror = function Rob$Prototype$Cod
     this.addInterface("Tridion.Cme.Command", ["EnableCodeMirror"]);
     this.HasExecuted = false;
     this.CodeArea = null;
+
+    CodeMirror.defineMode("dreamweaver", function (config, parserConfig) {
+        var dreamweaverOverlay = {
+            token: function (stream, state) {
+                var ch;
+                if (stream.match("@@")) {
+                    while ((ch = stream.next()) != null)
+                        if (ch == "@" && stream.next() == "@") break;
+                    return "dreamweaver";
+                }
+                while (stream.next() != null && !stream.match("@@", false)) { }
+                return null;
+            }
+        };
+        return CodeMirror.overlayParser(CodeMirror.getMode(config, parserConfig.backdrop || "text/html"), dreamweaverOverlay);
+    });
 };
 
 Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype.isAvailable = function EnableCodeMirror$isAvailable(selection) {
@@ -34,7 +52,8 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype.isEnabled = functi
 };
 
 Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._execute = function EnableCodeMirror$_execute(selection) {
-
+    console.log('execute');
+    
     if (this.HasExecuted) {
         this.CodeArea.toTextArea();
         this.HasExecuted = false;
@@ -47,12 +66,8 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._execute = functio
 
     this.CodeArea = CodeMirror.fromTextArea(codeArea, {
         lineNumbers: true,
-        matchBrackets: true,
-        mode: { name: "xml", htmlMode: true },
-        indentUnit: 4,
-        indentWithTabs: true,
-        enterMode: "keep",
-        tabMode: "shift",
+        mode: { name: "dreamweaver", htmlMode: true },
+        smartIndent: true,
         onChange: function (editor) {
             editor.save();
         }
