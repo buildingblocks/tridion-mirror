@@ -13,8 +13,6 @@
     Author: Robert Stevenson-Leggett
 */
 
-
-
 Type.registerNamespace("Rob.Prototype.CodemirrorExtensions");
 
 Rob.Prototype.CodemirrorExtensions.EnableCodeMirror = function Rob$Prototype$CodemirrorExtensions$EnableCodemirror() {
@@ -47,7 +45,15 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._isAvailable = fun
 };
 
 Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._isEnabled = function EnableCodeMirror$_isEnabled(selection) {
-    console.log('enabled');
+    
+    if (this.CodeArea) {
+        var sourceTab = new Tridion.Cme.SourceTab($('#SourceTab'));
+        var currentType = sourceTab.properties.controls.TemplateTypes.properties.selectedValue;
+        var mode = currentType == "RazorTemplate" ? "razor" : "dreamweaver";
+        this.CodeArea.setOption("mode", mode);
+        console.log("changed mode to " + mode);
+    }
+
     return true;
 };
 
@@ -66,12 +72,16 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._execute = functio
         $('.EnableCodeMirror .text').textContent = 'Enable Code Mirror';
         return;
     }
+    
+    var sourceTab = new Tridion.Cme.SourceTab($('#SourceTab'));
+    var currentType = sourceTab.properties.controls.TemplateTypes.properties.selectedValue;
+    var mode = currentType == "RazorTemplate" ? "razor" : "dreamweaver";
 
     var codeArea = document.getElementById("SourceArea");
 
     this.CodeArea = CodeMirror.fromTextArea(codeArea, {
         lineNumbers: true,
-        mode: { name: "dreamweaver", htmlMode: true },
+        mode: { name: mode, htmlMode: true },
         smartIndent: true,
         onChange: function (editor) {
             editor.save();
@@ -81,4 +91,3 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._execute = functio
     $('.EnableCodeMirror .text').textContent  = 'Disable Code Mirror';
     this.HasExecuted = true;
 };
-

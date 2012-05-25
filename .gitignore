@@ -2,5 +2,9 @@
 bin
 obj
 
+# Visual Studio's useless files
+*.user
+*.suo
+
 # mstest test results
 TestResults
