@@ -42,18 +42,23 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror = function Rob$Prototype$Cod
 };
 
 Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype.isAvailable = function EnableCodeMirror$isAvailable(selection) {
-    console.log('is available');
+    console.log('available');
     return true;
 };
 
 Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype.isEnabled = function EnableCodeMirror$isEnabled(selection) {
-    console.log('is enabled');
+    console.log('enabled');
     return true;
 };
 
 Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._execute = function EnableCodeMirror$_execute(selection) {
-    console.log('execute');
-    
+
+    if ($('#MasterTabControl .selected').id !== 'SourceTab_switch')
+    {
+        alert('Please switch to the Source tab to use Code Mirror features!');
+        return;
+    }
+
     if (this.HasExecuted) {
         this.CodeArea.toTextArea();
         this.HasExecuted = false;
