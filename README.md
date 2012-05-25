@@ -1,16 +1,25 @@
-#CodeMirror Tridion GUI Extension
+#CodeMirror Syntax Highlighting Tridion GUI Extension
 
 **Purpose:** Add syntax highlighting to the source tab of a Template Building Block View in SDL Tridion 2011.  
 Version 0.1 ALPHA  
-**Supports:** SDL Tridion 2011  
+**Supports:** SDL Tridion 2011 including Razor Mediator (Tridion 2009 support coming soon)
 **Licence:** MIT
 
 **Author:** 
 Robert Stevenson-Leggett (http://github.com/rsleggett)
 
 **Contributors:**
-
+ 
  * James Simm (http://github.com/jimmah)
+
+**Roadmap**
+ 
+ * Tridion 2009 Support
+ * Dreamweaver Full Syntax Highlighting
+ * Autocomplete
+ * Syntax checking for DWTs
+ * Inline documentation
+ * Autocomplete Component or Page fields based on a schema
 
 Uses the fantasic Code Mirror: http://codemirror.net/
 
