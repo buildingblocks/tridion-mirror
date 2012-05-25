@@ -54,6 +54,7 @@
     <Content Include="Scripts\codemirror\javascript.js" />
     <Content Include="Scripts\codemirror\overlay.js" />
     <Content Include="Scripts\codemirror\php.js" />
+    <Content Include="Scripts\codemirror\razor.js" />
     <Content Include="Scripts\codemirror\xml.js" />
     <Content Include="Scripts\tridion-code-mirror-extension.js" />
   </ItemGroup>
