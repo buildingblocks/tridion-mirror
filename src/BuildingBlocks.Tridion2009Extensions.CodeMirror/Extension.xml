@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Extension ID="ReadonlyFields" xmlns="http://www.tridion.com/ContentManager/5.2/WebGUI/Extensions">
+	<OnOpenItem>
+		<Script SRC="codemirror/codemirror.js" Language="JavaScript">
+			<IncludeFor ItemType="16"/>
+		</Script>
+		<Script SRC="readonlyfields.js" Language="JavaScript">
+			<IncludeFor ItemType="16"/>
+		</Script>
+		<Script SRC="readonlyfields.js" Language="JavaScript">
+			<IncludeFor ItemType="16"/>
+		</Script>
+		<Script SRC="readonlyfields.js" Language="JavaScript">
+			<IncludeFor ItemType="16"/>
+		</Script>
+		<Style SRC="codemirror/codemirror.css">
+			
+		</Style>
+	</OnOpenItem>
+</Extension>
