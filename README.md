@@ -1,9 +1,11 @@
-#CodeMirror Syntax Highlighting Tridion GUI Extension
+# CodeMirror Syntax Highlighting Tridion GUI Extension
 
 **Purpose:** Add syntax highlighting to the source tab of a Template Building Block View in SDL Tridion 2011.  
-Version 0.1 ALPHA  
+**Version** 0.2 ALPHA  
 **Supports:** SDL Tridion 2011 including Razor Mediator (Tridion 2009 support coming soon)
 **Licence:** MIT
+
+Developed at Building Blocks (http://www.building-blocks.com)
 
 **Author:** 
 Robert Stevenson-Leggett (http://github.com/rsleggett)
