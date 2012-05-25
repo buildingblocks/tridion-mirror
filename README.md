@@ -5,10 +5,12 @@ Version 0.1 ALPHA
 **Supports:** SDL Tridion 2011  
 **Licence:** MIT
 
-##Authors:
-	
- * Robert Stevenson-Leggett (http://github.com/rsleggett)
- * James Simm (http://github.com/jamessimm)
+**Author:** 
+Robert Stevenson-Leggett (http://github.com/rsleggett)
+
+**Contributors:**
+
+ * James Simm (http://github.com/jimmah)
 
 Uses the fantasic Code Mirror: http://codemirror.net/
 
@@ -36,4 +38,4 @@ Uses the fantasic Code Mirror: http://codemirror.net/
  
 ## Known issues
 
- * Certain code structures are not fully highlighted in Razor highlighting mode.
+ * Certain code structures are not fully highlighted in RazorTemplate Template Types. This functionality is work-in-progress.
