@@ -8,3 +8,5 @@ obj
 
 # mstest test results
 TestResults
+/src/BuildingBlocks.Tridion2011Extensions.CodeMirror/BuildingBlocks.Tridion2011Extensions.CodeMirror/BuildingBlocks.Tridion2011Extensions.CodeMirror.csproj.user
+/src/BuildingBlocks.Tridion2011Extensions.CodeMirror/BuildingBlocks.Tridion2011Extensions.CodeMirror.suo
