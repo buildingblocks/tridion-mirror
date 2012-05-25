@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Extension ID="ReadonlyFields" xmlns="http://www.tridion.com/ContentManager/5.2/WebGUI/Extensions">
+<Extension ID="CodeMirror" xmlns="http://www.tridion.com/ContentManager/5.2/WebGUI/Extensions">
 	<OnOpenItem>
 		<Script SRC="codemirror/codemirror.js" Language="JavaScript">
-			<IncludeFor ItemType="16"/>
+			<IncludeFor ItemType="2048"/>
 		</Script>
-		<Script SRC="readonlyfields.js" Language="JavaScript">
-			<IncludeFor ItemType="16"/>
+		<Script SRC="codemirror/overlay.js" Language="JavaScript">
+			<IncludeFor ItemType="2048"/>
 		</Script>
-		<Script SRC="readonlyfields.js" Language="JavaScript">
-			<IncludeFor ItemType="16"/>
+		<Script SRC="codemirror/xml.js" Language="JavaScript">
+			<IncludeFor ItemType="2048"/>
 		</Script>
-		<Script SRC="readonlyfields.js" Language="JavaScript">
-			<IncludeFor ItemType="16"/>
+		<Script SRC="tridion2009-code-mirror-extension.js" Language="JavaScript">
+			<IncludeFor ItemType="2048"/>
 		</Script>
-		<Style SRC="codemirror/codemirror.css">
-			
-		</Style>
 	</OnOpenItem>
 </Extension>

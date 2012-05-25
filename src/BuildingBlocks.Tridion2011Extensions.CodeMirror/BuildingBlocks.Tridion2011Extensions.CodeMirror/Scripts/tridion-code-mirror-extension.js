@@ -41,20 +41,20 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror = function Rob$Prototype$Cod
     });
 };
 
-Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype.isAvailable = function EnableCodeMirror$isAvailable(selection) {
+Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._isAvailable = function EnableCodeMirror$_isAvailable(selection) {
     console.log('available');
     return true;
 };
 
-Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype.isEnabled = function EnableCodeMirror$isEnabled(selection) {
+Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._isEnabled = function EnableCodeMirror$_isEnabled(selection) {
     console.log('enabled');
     return true;
 };
 
 Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._execute = function EnableCodeMirror$_execute(selection) {
 
-    if ($('#MasterTabControl .selected').id !== 'SourceTab_switch')
-    {
+    if ($('#MasterTabControl .selected').id !== 'SourceTab_switch') {
+        //TODO: How to make this work with the above methods..
         alert('Please switch to the Source tab to use Code Mirror features!');
         return;
     }
