@@ -1,10 +1,14 @@
 #CodeMirror Tridion GUI Extension
 
-Purpose: Add syntax highlighting to the source tab of a Template Building Block View in SDL Tridion 2011.  
+**Purpose:** Add syntax highlighting to the source tab of a Template Building Block View in SDL Tridion 2011.  
 Version 0.1 ALPHA  
-Author: Robert Stevenson-Leggett  
-Supports: SDL Tridion 2011  
-Licence: MIT
+**Supports:** SDL Tridion 2011  
+**Licence:** MIT
+
+##Authors:
+	
+ * Robert Stevenson-Leggett (http://github.com/rsleggett)
+ * James Simm (http://github.com/jamessimm)
 
 Uses the fantasic Code Mirror: http://codemirror.net/
 
@@ -28,9 +32,8 @@ Uses the fantasic Code Mirror: http://codemirror.net/
 	
  5. Go to your SDL Tridion 2011 URL and hit Ctrl+F5 to ensure the cache is clear.
  6. Open a Template Building Block, all being well you should see a new 'Enable Code Mirror' button on the Ribbon Toolbar.
- 7. Switch to the source tab and click 'Enable Code Mirror' to begin editting! (P.S You can now use the TAB key as it was intended!)
+ 7. Switch to the source tab and click 'Enable Code Mirror' to begin editing! (P.S You can now use the TAB key as it was intended!)
  
 ## Known issues
 
- * In this Alpha version, enabling the Code Mirror button while not on the Source Tab will cause the code in the Template Building Block to be hidden from view. Don't panic, just press the button twice and it will sort itself out.
- * Tabbing multiple lines is broken
+ * Certain code structures are not fully highlighted in Razor highlighting mode.
