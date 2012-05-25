@@ -5,10 +5,12 @@ Version 0.1 ALPHA
 **Supports:** SDL Tridion 2011  
 **Licence:** MIT
 
-##Authors:
-	
- * Robert Stevenson-Leggett (http://github.com/rsleggett)
- * James Simm (http://github.com/jamessimm)
+**Author:** 
+Robert Stevenson-Leggett (http://github.com/rsleggett)
+
+**Contributors:**
+
+ * James Simm (http://github.com/jimmah)
 
 Uses the fantasic Code Mirror: http://codemirror.net/
 
@@ -19,7 +21,7 @@ Uses the fantasic Code Mirror: http://codemirror.net/
 
 ##Installation Instructions
 
- 1. On build of the project, there is a post build event which copies the needed files to C:\Extensions\CodeMirrorExension
+ 1. On build of the project, there is a post build event which copies the needed files to C:\Extensions\CodeMirrorExtension
  2. Take the files in that folder and put them on the Conent Management Server in a folder of your choosing.
  3. In IIS, create a virtual directory under the %SDL Tridion 2011 Website%\Editors\ called CodeMirror pointing to the directory from Step 2.
  4. Add the following lines to the config in %TridionDir%\web\WebUI\WebRoot\Configuration\System.config (remember to update installPath element to the directory from Step 2.)
@@ -36,4 +38,4 @@ Uses the fantasic Code Mirror: http://codemirror.net/
  
 ## Known issues
 
- * Certain code structures are not fully highlighted in Razor highlighting mode.
+ * Certain code structures are not fully highlighted in RazorTemplate Template Types. This functionality is work-in-progress.
