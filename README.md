@@ -37,13 +37,13 @@ Uses the fantasic Code Mirror: http://codemirror.net/
  3. In IIS, create a virtual directory under the %SDL Tridion 2011 Website%\Editors\ called CodeMirror pointing to the directory from Step 2.
  4. Add the following lines to the config in %TridionDir%\web\WebUI\WebRoot\Configuration\System.config (remember to update installPath element to the directory from Step 2.)
  
-        <editor name="CodeMirrorExtension" xmlns="http://www.sdltridion.com/2009/GUI/Configuration">
-		    <installpath xmlns="http://www.sdltridion.com/2009/GUI/Configuration">C:\CodeMirrorExtension\</installpath>
-		    <configuration xmlns="http://www.sdltridion.com/2009/GUI/Configuration">CodeMirrorExtension.config</configuration>
-		    <vdir xmlns="http://www.sdltridion.com/2009/GUI/Configuration">CodeMirror</vdir>
+        <editor name="CodeMirrorExtension">
+		    <installpath>C:\CodeMirrorExtension\</installpath>
+		    <configuration>CodeMirrorExtension.config</configuration>
+		    <vdir>CodeMirror</vdir>
 	    </editor>
 	
- 5. Go to your SDL Tridion 2011 URL and hit Ctrl+F5 to ensure the cache is clear.
+ 5. Update the modification attribute on the server element in order to rebuild the javascript `<server version="6.1.0.55920" modification="37">`
  6. Open a Template Building Block, all being well you should see a new 'Enable Code Mirror' button on the Ribbon Toolbar.
  7. Switch to the source tab and click 'Enable Code Mirror' to begin editing! (P.S You can now use the TAB key as it was intended!)
  
