@@ -14,6 +14,19 @@
     Author: Robert Stevenson-Leggett
 */
 
+/* Add our stylesheet */ 
+if(document.createStyleSheet) {
+  document.createStyleSheet('/Extensions/CodeMirror/codemirror.css');
+}
+else {
+  var styles = "@import url(' /Extensions/CodeMirror/codemirror.css ');";
+  var newSS=document.createElement('link');
+  newSS.rel='stylesheet';
+  newSS.href='data:text/css,'+escape(styles);
+  document.getElementsByTagName("head")[0].appendChild(newSS);
+}
+
+/* Add the dreamweaver mode */
 CodeMirror.defineMode("dreamweaver", function (config, parserConfig) {
 	var dreamweaverOverlay = {
 		token: function (stream, state) {
@@ -30,29 +43,29 @@ CodeMirror.defineMode("dreamweaver", function (config, parserConfig) {
 	return CodeMirror.overlayParser(CodeMirror.getMode(config, parserConfig.backdrop || "text/html"), dreamweaverOverlay);
 });
 
-CodeMirror._codeArea = null;
-
-function EnableCodeMirror(){
-	if(CodeMirror._codeArea  != null) {
-		alert('in enable code mirror');
-		var sourceArea = $j('.SourceEditor');
-		var codeArea = CodeMirror.fromTextArea(sourceArea.get(0), {
-			lineNumbers: true,
-			mode: { name: "dreamweaver", htmlMode: true },
-			smartIndent: true,
-			onChange: function (editor) {
-				editor.save();
-			}
-		});
-		CodeMirror._codeArea = codeArea;
-	}
-}
-
+/* jQuery init */
 $j(function() {
-	
-	$j('tabTab nobr:contains(Source)').click(function() { 
-		EnableCodeMirror();
-	});
+	/* Called on tab switch */
+	var enableCodeMirror = function (undefined){
+		if(CodeMirror._codeArea === undefined)
+		{
+			var sourceArea = $j('.SourceEditor');
+			var codeArea = CodeMirror.fromTextArea(sourceArea.get(0), {
+				lineNumbers: true,
+				mode: { name: "dreamweaver", htmlMode: true },
+				smartIndent: true,
+				onChange: function (editor) {
+					editor.save();
+				}
+			});
+			CodeMirror._codeArea = codeArea;
+		}
+	};
 
+	/* Fire when the Source tab is clicked */
+	$j('nobr:contains(Source)').click(function() { 
+		enableCodeMirror();
+	});	
 });
+
 

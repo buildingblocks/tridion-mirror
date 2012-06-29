@@ -17,10 +17,12 @@
 			<IncludeFor ItemType="2048"/>
 		</Script>
 	</OnOpenItem>
-	<!--<Toolbar>
+	<Toolbar>
 		<Button toolbarType="item" toolbarBlockId="ToolSave" toolbarBlockLocation="">
 			<toolbarbutton id="extCodemirror" stringId="40001" stringDescr="EnableCodeMirror" img="/Images/Icons/AAnchor.21x21.Toolbar.gif"/>
 		</Button>
+		<DisplayWhen>true</DisplayWhen>
+		<EnableWhen>true</EnableWhen>
 		<Execute>EnableCodeMirror()</Execute>
-	</Toolbar>-->
+	</Toolbar>
 </Extension>
