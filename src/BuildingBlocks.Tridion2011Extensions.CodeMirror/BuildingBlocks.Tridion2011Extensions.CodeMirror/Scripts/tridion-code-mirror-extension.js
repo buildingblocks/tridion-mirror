@@ -18,7 +18,7 @@ Type.registerNamespace("Rob.Prototype.CodemirrorExtensions");
 Rob.Prototype.CodemirrorExtensions.EnableCodeMirror = function Rob$Prototype$CodemirrorExtensions$EnableCodemirror() {
     Type.enableInterface(this, "Rob.Prototype.CodemirrorExtensions.EnableCodeMirror");
     this.addInterface("Tridion.Cme.Command", ["EnableCodeMirror"]);
-    
+
     this.HasExecuted = false;
     this.CodeArea = null;
 
@@ -31,6 +31,11 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror = function Rob$Prototype$Cod
                         if (ch == "@" && stream.next() == "@") break;
                     return "dreamweaver";
                 }
+                if (stream.match("${")) {
+                    while ((ch = stream.next()) != null)
+                        if (ch == "}") break;
+                    return "dreamweaver";
+                }
                 while (stream.next() != null && !stream.match("@@", false)) { }
                 return null;
             }
@@ -39,14 +44,14 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror = function Rob$Prototype$Cod
     });
 
     this.TypeMap = {
-          "RazorTemplate":"razor",
-          "CSharpTemplate":"csharp",
-          "DreamweaverTemplate":"dreamweaver",
-          "JScript":"javascript",
-          "XSLT":"xml",
-          "CompoundTemplate": "xml",
-          "VBScript":"vbscript",
-          "AssemblyTemplate":""
+        "RazorTemplate": "razor",
+        "CSharpTemplate": "text/x-csharp",
+        "DreamweaverTemplate": "dreamweaver",
+        "JScript": "javascript",
+        "XSLT": "xml",
+        "CompoundTemplate": "xml",
+        "VBScript": "vbscript",
+        "AssemblyTemplate": ""
     };
 };
 
