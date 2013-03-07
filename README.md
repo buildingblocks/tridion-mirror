@@ -5,13 +5,11 @@
 **Supports:** SDL Tridion 2011 including Razor Mediator
 **Licence:** MIT
 
-Developed at Building Blocks (http://www.building-blocks.com)
-
-**Author:** 
-Robert Stevenson-Leggett (http://github.com/rsleggett)
+Initial version developed at Building Blocks (http://www.building-blocks.com)
 
 **Contributors:**
- 
+
+ * Robert Stevenson-Leggett (http://github.com/rsleggett)
  * James Simm (Building Blocks, http://github.com/jimmah)
  * Bart Koopman (SDL, http://sdltridionworld.com/community/developers/bart_koopman.aspx)
 
