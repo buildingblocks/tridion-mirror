@@ -1,5 +1,5 @@
 # CodeMirror Syntax Highlighting Tridion GUI Extension
-v0.2
+v0.3
 
 Installation instructions for SDL Tridion 2011:
 

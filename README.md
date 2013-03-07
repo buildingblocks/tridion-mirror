@@ -44,7 +44,7 @@ Uses the fantasic Code Mirror: http://codemirror.net/
 ##Screenshots
 ![Razor](https://github.com/buildingblocks/tridion-mirror/raw/master/screen-shots/razor.jpg "Extension in action with a Razor Template")
 ![DreamWeaver](https://github.com/buildingblocks/tridion-mirror/raw/master/screen-shots/DWT.PNG "Extension in action with a dreamweaver template")
-![C# Fragment](https://github.com/buildingblocks/tridion-mirror/raw/master/screen-shots/C#.PNG "Extension in action with a C# fragment template")
+![C# Fragment](https://github.com/buildingblocks/tridion-mirror/raw/master/screen-shots/CSharp.PNG "Extension in action with a C# fragment template")
 ![Compound Template](https://github.com/buildingblocks/tridion-mirror/raw/master/screen-shots/Compound Template.PNG "Extension in action with a Compound template")
 ![XSLT](https://github.com/buildingblocks/tridion-mirror/raw/master/screen-shots/XSLT.PNG "Extension in action with a XSLT template")
 
