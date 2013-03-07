@@ -1,8 +1,8 @@
 # CodeMirror Syntax Highlighting Tridion GUI Extension
 
 **Purpose:** Add syntax highlighting to the source tab of a Template Building Block View in SDL Tridion 2011.  
-**Version** 0.2 ALPHA  
-**Supports:** SDL Tridion 2011 including Razor Mediator (Tridion 2009 support coming soon) 
+**Version** 0.3 BETA  
+**Supports:** SDL Tridion 2011 including Razor Mediator
 **Licence:** MIT
 
 Developed at Building Blocks (http://www.building-blocks.com)
@@ -12,23 +12,43 @@ Robert Stevenson-Leggett (http://github.com/rsleggett)
 
 **Contributors:**
  
- * James Simm (http://github.com/jimmah)
+ * James Simm (Building Blocks, http://github.com/jimmah)
+ * Bart Koopman (SDL, http://sdltridionworld.com/community/developers/bart_koopman.aspx)
 
-**Roadmap**
+** Changes in v0.3 **
  
- * Tridion 2009 Support
+  * Updated to CodeMirror v2.38
+  * Now automatically selects a new syntax highlight mode when the TBB drop down is changed
+  * New Syntax Highlighting support for Compound Templates, C# Fragments,  XSLT, VBScript, JScript
+  * Now available for Page Template and Component Template Views
+  * Disabled Word Wrap when the plugin is enabled (thanks Bart)
+  * Updated styles (thanks Bart)
+  * Updated font and colour scheme (thanks Bart)
+ 
+** Roadmap for v0.4 **
+ 
+ * Update to CodeMirror 3.x
+ * Settings to Auto enable the extension when the Source tab is accessed
  * Dreamweaver Full Syntax Highlighting
- * Autocomplete
+ * Installer
+ 
+** Roadmap for v0.5 **
+
+ * Autocomplete / Intellisense
  * Syntax checking for DWTs
  * Inline documentation
- * Autocomplete Component or Page fields based on a schema
+ * Autocomplete Component or Page fields based on a Schema
 
 Uses the fantasic Code Mirror: http://codemirror.net/
 
-**Please note this is an Alpha / Proof of Concept**
+**Please note this is an Beta, please test in your own environment**
 
-##Screenshot
-![Tridion GUI extension in action](https://github.com/buildingblocks/tridion-mirror/raw/master/Capture.PNG "Extension in action")
+##Screenshots
+![Razor](https://github.com/buildingblocks/tridion-mirror/raw/master/screen-shots/razor.jpg "Extension in action with a Razor Template")
+![DreamWeaver](https://github.com/buildingblocks/tridion-mirror/raw/master/screen-shots/DWT.PNG "Extension in action with a dreamweaver template")
+![C# Fragment](https://github.com/buildingblocks/tridion-mirror/raw/master/screen-shots/C#.PNG "Extension in action with a C# fragment template")
+![Compound Template](https://github.com/buildingblocks/tridion-mirror/raw/master/screen-shots/Compound Template.PNG "Extension in action with a Compound template")
+![XSLT](https://github.com/buildingblocks/tridion-mirror/raw/master/screen-shots/XSLT.PNG "Extension in action with a XSLT template")
 
 ##Installation Instructions
 

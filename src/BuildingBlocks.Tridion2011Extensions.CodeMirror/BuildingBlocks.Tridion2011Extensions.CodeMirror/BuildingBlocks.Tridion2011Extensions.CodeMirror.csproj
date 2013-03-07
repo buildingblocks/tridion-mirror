@@ -48,12 +48,15 @@
     <Content Include="CSS\icon\icon.png" />
     <Content Include="CSS\tridion-mirror.css" />
     <Content Include="Scripts\codemirror\codemirror.js" />
-    <Content Include="Scripts\codemirror\modes\clike\clike.js" />
-    <Content Include="Scripts\codemirror\modes\css\css.js" />
-    <Content Include="Scripts\codemirror\modes\razor\razor.js" />
-    <Content Include="Scripts\codemirror\modes\vbscript\vbscript.js" />
-    <Content Include="Scripts\codemirror\modes\xml\xml.js" />
+    <Content Include="Scripts\codemirror\mode\clike\clike.js" />
+    <Content Include="Scripts\codemirror\mode\css\css.js" />
+    <Content Include="Scripts\codemirror\mode\javascript\javascript.js" />
+    <Content Include="Scripts\codemirror\mode\razor\razor.js" />
+    <Content Include="Scripts\codemirror\mode\vbscript\vbscript.js" />
+    <Content Include="Scripts\codemirror\mode\xml\xml.js" />
     <Content Include="Scripts\codemirror\util\closetag.js" />
+    <Content Include="Scripts\codemirror\util\continuecomment.js" />
+    <Content Include="Scripts\codemirror\util\continuelist.js" />
     <Content Include="CSS\dialog.css" />
     <Content Include="Scripts\codemirror\util\dialog.js" />
     <Content Include="Scripts\codemirror\util\foldcode.js" />
@@ -64,11 +67,13 @@
     <Content Include="Scripts\codemirror\util\multiplex.js" />
     <Content Include="Scripts\codemirror\util\overlay.js" />
     <Content Include="Scripts\codemirror\util\pig-hint.js" />
+    <Content Include="Scripts\codemirror\util\runmode-standalone.js" />
     <Content Include="Scripts\codemirror\util\runmode.js" />
     <Content Include="Scripts\codemirror\util\search.js" />
     <Content Include="Scripts\codemirror\util\searchcursor.js" />
     <Content Include="CSS\simple-hint.css" />
     <Content Include="Scripts\codemirror\util\simple-hint.js" />
+    <Content Include="Scripts\codemirror\util\xml-hint.js" />
     <Content Include="Scripts\tridion-code-mirror-extension.js" />
   </ItemGroup>
   <ItemGroup>
