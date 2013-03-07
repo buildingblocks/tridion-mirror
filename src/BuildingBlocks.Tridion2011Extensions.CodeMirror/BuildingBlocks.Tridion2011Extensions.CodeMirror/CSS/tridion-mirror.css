@@ -13,3 +13,17 @@ span.cm-razor { background-color: rgb(236, 242, 245); }
 span.cm-razor-tag { background-color: yellow; }
 span.cm-razor-keyword { color: blue; background-color: rgb(236, 242, 245); }
 span.cm-razor-string { color: rgb(163, 21, 21); background-color: rgb(236, 242, 245); }
+
+#ext_codemirror {max-width: 80px;}
+
+.CodeMirror {
+    border: solid 1px #b3b3b3;
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    font-size: 12px;
+    line-height: 14px;
+}
+.cm-dreamweaver {color: #840000;}
+.cm-s-default span.cm-tag { color: #00f; }
+.cm-s-default span.cm-attribute { color: #f00; }
+.cm-s-default span.cm-string { color: #8400ff; }
+.cm-s-default span.cm-comment { color: #008200; }

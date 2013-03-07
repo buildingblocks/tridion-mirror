@@ -89,6 +89,7 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._execute = functio
         this.HasExecuted = false;
         this.CodeArea = null;
         $('.EnableCodeMirror .text').textContent = 'Enable Code Mirror';
+        $('#Wordwrap').disabled = false;
         return;
     }
 
@@ -108,5 +109,6 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._execute = functio
     });
 
     $('.EnableCodeMirror .text').textContent = 'Disable Code Mirror';
+    $('#Wordwrap').disabled = true;
     this.HasExecuted = true;
 };
