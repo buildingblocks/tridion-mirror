@@ -101,13 +101,12 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._execute = functio
 
     this.CodeArea = CodeMirror.fromTextArea(codeArea, {
         lineNumbers: true,
-        mode: { name: mode, htmlMode: true },
         smartIndent: true,
         onChange: function (editor) {
             editor.save();
         }
     });
-
+    this.CodeArea.setOption("mode", mode);
     $('.EnableCodeMirror .text').textContent = 'Disable Code Mirror';
     $('#Wordwrap').disabled = true;
     this.HasExecuted = true;
