@@ -1,8 +1,9 @@
 # CodeMirror Syntax Highlighting Tridion GUI Extension
 v0.3
 
-Installation instructions for SDL Tridion 2011:
+If upgrading from 0.2 please delete all files in the Virtual direcoroy %SDL Tridion 2011 Website%\Editors\CodeMirror or the folder you chose.
 
+Installation instructions for SDL Tridion 2011:
 
  1. Unzip the files to a folder of your choosing
  2. Take the files in that folder and put them on the Conent Management Server in a folder of your choosing.
