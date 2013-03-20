@@ -27,8 +27,8 @@
 	CodeMirror.defaults['closeTagVoid'] = ['area', 'base', 'br', 'col', 'command', 'embed', 'hr', 'img', 'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr'];
 
 	function innerXMLState(cm, state) {
-		var inner = CodeMirror.innerMode(cm.getMode(), state);
-		if (inner.mode.name == "xml") return inner.state;
+	    var inner = CodeMirror.innerMode(cm.getMode(), state);
+	    if (inner.mode.name == "xml") return inner.state;
 	}
 
 

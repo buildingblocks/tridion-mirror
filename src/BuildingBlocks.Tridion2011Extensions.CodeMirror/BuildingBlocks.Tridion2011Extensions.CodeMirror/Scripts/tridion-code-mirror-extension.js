@@ -12,6 +12,7 @@
     Version: 0.3
     Author: Robert Stevenson-Leggett
 */
+"use strict";
 
 Type.registerNamespace("Rob.Prototype.CodemirrorExtensions");
 
@@ -48,10 +49,13 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror = function Rob$Prototype$Cod
         "CSharpTemplate": "text/x-csharp",
         "DreamweaverTemplate": "dreamweaver",
         "JScript": "javascript",
+		// This is the standard XSLT mediator
         "XSLT": "xml",
         "CompoundTemplate": "xml",
         "VBScript": "vbscript",
-        "AssemblyTemplate": ""
+        "AssemblyTemplate": "",
+		// This is the built in Xslt Mediator
+		"XsltTemplate": "xml" 
     };
 };
 
