@@ -44,10 +44,6 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror = function Rob$Prototype$Cod
         return CodeMirror.overlayParser(CodeMirror.getMode(config, parserConfig.backdrop || "text/html"), dreamweaverOverlay);
     });
 
-    CodeMirror.commands.autocomplete = function(cm) {
-        CodeMirror.simpleHint(cm, CodeMirror.dreamweaverHint);
-    };
-
     this.TypeMap = {
         "RazorTemplate": "razor",
         "CSharpTemplate": "text/x-csharp",
@@ -112,8 +108,7 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._execute = functio
         smartIndent: true,
         onChange: function (editor) {
             editor.save();
-        },
-        extraKeys: { "Ctrl-Space": "autocomplete" }
+        }
     });
     this.CodeArea.setOption("mode", mode);
     $('.EnableCodeMirror .text').textContent = 'Disable Code Mirror';

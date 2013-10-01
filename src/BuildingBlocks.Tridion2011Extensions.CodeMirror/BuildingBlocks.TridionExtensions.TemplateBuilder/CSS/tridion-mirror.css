@@ -1,0 +1,43 @@
+/*!
+    Tridion Code Mirror Extension
+
+    Copyright (C) 2013 Robert Stevenson-Leggett
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+    Version: 0.3
+    Author: Robert Stevenson-Leggett
+*/
+.EnableCodeMirror .image {background-image:url({ThemePath}/icon/icon.png);}
+.cm-dreamweaver {color: #0c1;}
+
+span.cm-xml-tag { color: rgb(163, 21, 21); }
+span.cm-xml-attribute { color: rgb(0, 0, 255); }
+span.cm-xml-attname { color: rgb(255, 0, 0); }
+span.cm-xml-comment { color: rgb(0, 128, 0); }
+span.cm-xml-cdata { color: #777; }
+span.cm-xml-processing { color: #777; }
+span.cm-xml-entity { color: #a22; }
+
+span.cm-razor { background-color: rgb(236, 242, 245); }
+span.cm-razor-tag { background-color: yellow; }
+span.cm-razor-keyword { color: blue; background-color: rgb(236, 242, 245); }
+span.cm-razor-string { color: rgb(163, 21, 21); background-color: rgb(236, 242, 245); }
+
+#ext_codemirror {max-width: 80px;}
+
+.CodeMirror {
+    border: solid 1px #b3b3b3;
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    font-size: 12px;
+    line-height: 14px;
+}
+.cm-dreamweaver {color: #840000;}
+.cm-s-default span.cm-tag { color: #00f; }
+.cm-s-default span.cm-attribute { color: #f00; }
+.cm-s-default span.cm-string { color: #8400ff; }
+.cm-s-default span.cm-comment { color: #008200; }

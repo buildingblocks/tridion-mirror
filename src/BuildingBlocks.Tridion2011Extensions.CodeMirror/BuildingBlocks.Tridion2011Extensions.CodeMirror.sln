@@ -1,7 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks.Tridion2011Extensions.CodeMirror", "BuildingBlocks.Tridion2011Extensions.CodeMirror\BuildingBlocks.Tridion2011Extensions.CodeMirror.csproj", "{45B79000-20BC-41BA-A9F5-E38E08D7162F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks.TridionExtensions.TemplateBuilder", "BuildingBlocks.TridionExtensions.TemplateBuilder\BuildingBlocks.TridionExtensions.TemplateBuilder.csproj", "{F5D0DA3B-9068-4AD6-8870-8EB74B449E4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB.TemplateEditor.Model.Tests", "BB.TemplateEditor.Model.Tests\BB.TemplateEditor.Model.Tests.csproj", "{6F8ACB70-2081-442A-A36A-02281726F9F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,14 @@ Global
 		{45B79000-20BC-41BA-A9F5-E38E08D7162F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45B79000-20BC-41BA-A9F5-E38E08D7162F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45B79000-20BC-41BA-A9F5-E38E08D7162F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5D0DA3B-9068-4AD6-8870-8EB74B449E4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5D0DA3B-9068-4AD6-8870-8EB74B449E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5D0DA3B-9068-4AD6-8870-8EB74B449E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5D0DA3B-9068-4AD6-8870-8EB74B449E4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F8ACB70-2081-442A-A36A-02281726F9F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8ACB70-2081-442A-A36A-02281726F9F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8ACB70-2081-442A-A36A-02281726F9F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8ACB70-2081-442A-A36A-02281726F9F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
