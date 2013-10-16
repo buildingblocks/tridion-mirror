@@ -7,8 +7,8 @@ Installation instructions for SDL Tridion 2011:
 
  1. Unzip the files to a folder of your choosing
  2. Take the files in that folder and put them on the Conent Management Server in a folder of your choosing.
- 3. In IIS, create a virtual directory under the %SDL Tridion 2011 Website%\Editors\ called CodeMirror pointing to the directory from Step 2.
- 4. Add the following lines to the config in %TridionDir%\web\WebUI\WebRoot\Configuration\System.config (remember to update installPath element to the directory from Step 2.)
+ 3. In IIS, create a virtual directory under the %SDL Tridion 2011 Website%\WebUI\Editors\ called CodeMirror pointing to the directory from Step 2.
+ 4. Find the `<editors>` section in the %TridionDir%\web\WebUI\WebRoot\Configuration\System.config file and insert the following before the closing `</editors>` element (remember to update installPath element to the directory from Step 2.)
  
         <editor name="CodeMirrorExtension">
 		    <installpath>C:\CodeMirrorExtension\</installpath>
