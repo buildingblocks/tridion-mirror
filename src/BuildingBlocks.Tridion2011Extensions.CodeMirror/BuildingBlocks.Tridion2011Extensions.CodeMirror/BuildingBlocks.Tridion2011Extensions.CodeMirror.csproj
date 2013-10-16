@@ -48,6 +48,7 @@
     <Content Include="CSS\icon\icon.png" />
     <Content Include="CSS\tridion-mirror.css" />
     <Content Include="Scripts\codemirror\codemirror.js" />
+    <Content Include="Scripts\codemirror\hints\razor-hints.js" />
     <Content Include="Scripts\codemirror\mode\clike\clike.js" />
     <Content Include="Scripts\codemirror\mode\css\css.js" />
     <Content Include="Scripts\codemirror\mode\javascript\javascript.js" />
@@ -74,7 +75,7 @@
     <Content Include="CSS\simple-hint.css" />
     <Content Include="Scripts\codemirror\util\simple-hint.js" />
     <Content Include="Scripts\codemirror\util\xml-hint.js" />
-    <Content Include="Scripts\dreamweaver-hints.js" />
+    <Content Include="Scripts\codemirror\hints\dreamweaver-hints.js" />
     <Content Include="Scripts\tridion-code-mirror-extension.js" />
   </ItemGroup>
   <ItemGroup>
