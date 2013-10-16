@@ -97,10 +97,10 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._execute = functio
         this.HasExecuted = false;
         this.CodeArea = null;
         $('.EnableCodeMirror .text').textContent = 'Enable Code Mirror';
-        $('#Wordwrap').disabled = false;
+        $('#WrapBlock').setAttribute('style','display:block');
         return;
     }
-
+	
     var sourceTab = new Tridion.Cme.SourceTab($('#SourceTab'));
     var currentType = sourceTab.properties.controls.TemplateTypes.properties.selectedValue;
     
@@ -116,7 +116,9 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._execute = functio
         extraKeys: { "Ctrl-Space": "autocomplete" }
     });
     this.CodeArea.setOption("mode", mode);
+	$('.CodeMirror-scroll').setAttribute('style','height:100%');
     $('.EnableCodeMirror .text').textContent = 'Disable Code Mirror';
-    $('#Wordwrap').disabled = true;
+    $('#WrapBlock').setAttribute('style','display:none');
+
     this.HasExecuted = true;
 };

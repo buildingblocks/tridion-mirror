@@ -79,16 +79,13 @@
     <Content Include="Scripts\tridion-code-mirror-extension.js" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CodeMirrorExtension.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Editor\Configuration\editor.config" />
+    <None Include="install.ps1" />
+    <None Include="postbuild.bat" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy $(ProjectDir)CodeMirrorExtension.config C:\Extensions\CodeMirrorExtension\ /y
-xcopy $(ProjectDir)Scripts\*.js C:\Extensions\CodeMirrorExtension\Scripts\ /ys
-xcopy $(ProjectDir)CSS\*.css C:\Extensions\CodeMirrorExtension\CSS\ /ys
-xcopy $(ProjectDir)CSS\icon\*.png C:\Extensions\CodeMirrorExtension\CSS\icon\ /ys</PostBuildEvent>
+    <PostBuildEvent>call $(ProjectDir}\postbuild.bat</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
