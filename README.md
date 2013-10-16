@@ -58,13 +58,13 @@ Uses the fantasic Code Mirror: http://codemirror.net/
  1. On build of the BuildingBlocks.Tridion2011Extensions.CodeMirror project, there is a post build event which copies the needed files to C:\Extensions\CodeMirrorExtension
  2. Take the files in that folder and put them on the Content Management Server in a folder of your choosing.
  3. In IIS, create a virtual directory under the %SDL Tridion 2011 Website%\Editors\ called CodeMirror pointing to the directory from Step 2.
- 4. Add the following lines to the config in %TridionDir%\web\WebUI\WebRoot\Configuration\System.config (remember to update installPath element to the directory from Step 2.)
+ 4. Find the `editors` element in %TridionDir%\web\WebUI\WebRoot\Configuration\System.config and insert the following lines before the closing `</editors>` element (remember to update installPath element to the directory from Step 2.)
  
         <editor name="CodeMirrorExtension">
-		    <installpath>C:\CodeMirrorExtension\</installpath>
-		    <configuration>CodeMirrorExtension.config</configuration>
-		    <vdir>CodeMirror</vdir>
-	    </editor>
+	    <installpath>C:\CodeMirrorExtension\</installpath>
+	    <configuration>CodeMirrorExtension.config</configuration>
+	    <vdir>CodeMirror</vdir>
+        </editor>
 	
  5. Update the modification attribute on the server element in order to rebuild the javascript `<server version="6.1.0.55920" modification="37">`
  6. Open a Template Building Block, all being well you should see a new 'Enable Code Mirror' button on the Ribbon Toolbar.
