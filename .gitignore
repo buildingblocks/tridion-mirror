@@ -11,3 +11,22 @@ TestResults
 /src/BuildingBlocks.Tridion2011Extensions.CodeMirror/BuildingBlocks.Tridion2011Extensions.CodeMirror/BuildingBlocks.Tridion2011Extensions.CodeMirror.csproj.user
 /src/BuildingBlocks.Tridion2011Extensions.CodeMirror/BuildingBlocks.Tridion2011Extensions.CodeMirror.suo
 /src/BuildingBlocks.Tridion2011Extensions.CodeMirror/_ReSharper.BuildingBlocks.Tridion2011Extensions.CodeMirror
+
+# Resharper
+_Resharper
+
+# Node.js Things
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+node_modules

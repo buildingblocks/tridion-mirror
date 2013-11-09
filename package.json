@@ -1,0 +1,18 @@
+{
+  "name": "tridion-mirror",
+  "preferGlobal": true,
+  "version": "0.1.0",
+  "author": "Building Blocks",
+  "description": "Tridion Mirror Grunt",
+  "contributors": [ 
+    {
+      "name": "Robert Stevenson-Leggett",
+      "email": "r.leggett@building-blocks.com"
+    } 
+  ],
+  "dependencies" : {
+    "grunt"   :  "0.4.x",
+	"grunt-cli" : "0.1.x",
+    "grunt-contrib-compress" : "0.4.x"
+  }
+}
