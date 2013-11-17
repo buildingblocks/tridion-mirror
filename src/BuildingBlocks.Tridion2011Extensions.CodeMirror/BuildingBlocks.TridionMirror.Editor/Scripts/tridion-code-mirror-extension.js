@@ -14,9 +14,9 @@
 */
 "use strict";
 
-Type.registerNamespace("Rob.Prototype.CodemirrorExtensions");
+Type.registerNamespace("BuildingBlocks.CodemirrorExtension");
 
-Rob.Prototype.CodemirrorExtensions.EnableCodeMirror = function Rob$Prototype$CodemirrorExtensions$EnableCodemirror() {
+BuildingBlocks.CodemirrorExtension.EnableCodeMirror = function BuildingBlocks$CodemirrorExtension$EnableCodemirror() {
     Type.enableInterface(this, "Rob.Prototype.CodemirrorExtensions.EnableCodeMirror");
     this.addInterface("Tridion.Cme.Command", ["EnableCodeMirror"]);
 
@@ -63,12 +63,12 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror = function Rob$Prototype$Cod
     };
 };
 
-Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._isAvailable = function EnableCodeMirror$_isAvailable(selection) {
+BuildingBlocks.CodemirrorExtension.EnableCodeMirror.prototype._isAvailable = function EnableCodeMirror$_isAvailable(selection) {
     // If you've got access to the item, you probably want this
-    return true;
+    return $('#MasterTabControl .selected').id === 'SourceTab_switch';
 };
 
-Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._isEnabled = function EnableCodeMirror$_isEnabled(selection, undefined) {
+BuildingBlocks.CodemirrorExtension.EnableCodeMirror.prototype._isEnabled = function EnableCodeMirror$_isEnabled(selection, undefined) {
 
     if (this.CodeArea) {
         var sourceTab = new Tridion.Cme.SourceTab($('#SourceTab'));
@@ -84,23 +84,27 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._isEnabled = funct
     return true;
 };
 
-Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._execute = function EnableCodeMirror$_execute(selection) {
-
-    if (this.HasExecuted) {
-        //this.CodeArea.toTextArea();
-        //this.HasExecuted = false;
-        //this.CodeArea = null;
-        //$('.EnableCodeMirror .text').textContent = 'Enable Code Mirror';
-        //$('#WrapBlock').setAttribute('style','display:block');
+BuildingBlocks.CodemirrorExtension.EnableCodeMirror.prototype._execute = function EnableCodeMirror$_execute(selection) {
+    if ($('#MasterTabControl .selected').id !== 'SourceTab_switch') {
+        //TODO: How to make this work with the above methods..
+        alert('Please switch to the Source tab to use Code Mirror features!');
         return;
     }
-	
+
+    if (this.HasExecuted) {
+        this.CodeArea.toTextArea();
+        this.HasExecuted = false;
+        this.CodeArea = null;
+        $('.EnableCodeMirror .text').textContent = 'Enable Code Mirror';
+        $('#Wordwrap').disabled = false;
+        return;
+    }
+
     var sourceTab = new Tridion.Cme.SourceTab($('#SourceTab'));
     var currentType = sourceTab.properties.controls.TemplateTypes.properties.selectedValue;
-    
+
     var mode = this.TypeMap[currentType];
-    var codeArea = document.getElementById("CodeMirrorTextArea");
-    codeArea.textContent = sourceTab.properties.controls.SourceEditor.element.value;
+    var codeArea = document.getElementById("SourceArea");
 
     this.CodeArea = CodeMirror.fromTextArea(codeArea, {
         lineNumbers: true,
@@ -111,6 +115,7 @@ Rob.Prototype.CodemirrorExtensions.EnableCodeMirror.prototype._execute = functio
         extraKeys: { "Ctrl-Space": "autocomplete" }
     });
     this.CodeArea.setOption("mode", mode);
-
+    $('.EnableCodeMirror .text').textContent = 'Disable Code Mirror';
+    $('#Wordwrap').disabled = true;
     this.HasExecuted = true;
 };

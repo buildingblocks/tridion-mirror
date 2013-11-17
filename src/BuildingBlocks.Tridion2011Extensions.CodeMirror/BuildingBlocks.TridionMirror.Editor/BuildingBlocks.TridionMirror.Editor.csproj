@@ -135,8 +135,8 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>REM del "%25TRIDION_HOME%25\WebUI\Editors\CodeMirror\*.*" /ys
+xcopy "$(ProjectDir)*.*" "%25TRIDION_HOME%25\web\WebUI\Editors\CodeMirror\" /ysi</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
