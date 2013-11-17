@@ -5,14 +5,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks.TridionMirro
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
 		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
 		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61A0482A-D831-4666-8604-D5619114D173}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{61A0482A-D831-4666-8604-D5619114D173}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
 		{61A0482A-D831-4666-8604-D5619114D173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{61A0482A-D831-4666-8604-D5619114D173}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61A0482A-D831-4666-8604-D5619114D173}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{61A0482A-D831-4666-8604-D5619114D173}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
 		{61A0482A-D831-4666-8604-D5619114D173}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61A0482A-D831-4666-8604-D5619114D173}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61A0482A-D831-4666-8604-D5619114D173}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{61A0482A-D831-4666-8604-D5619114D173}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
