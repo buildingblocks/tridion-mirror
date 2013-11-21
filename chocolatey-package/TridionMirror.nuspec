@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>CodeMirrorTridion</id>
+    <title>Code Mirror for Tridion</title>
+    <version>0.4</version>
+    <authors>Building Blocks</authors>
+    <owners>Building Blocks</owners>
+    <summary>Adds syntax highlighting to the source area in SDL Tridion</summary>
+    <description>An extension which adds Code Mirror (codemirror.net) Syntax Highlighting to the SDL Tridion 2011/2013 Source tab with a button to enable or disable.</description>
+    <projectUrl>http://github.com/buildingblocks/tridion-mirror</projectUrl>
+    <tags>SDL Tridion admin syntax highlighting code mirror</tags>
+    <copyright></copyright>
+    <licenseUrl></licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--<iconUrl>https://raw.github.com/__CHOCO_PKG_OWNER_REPO__/master/__NAME__/__NAME__.png</iconUrl>-->
+    <!--<dependencies>
+      <dependency id="" version="" />
+    </dependencies>-->
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <!--<file src="content\**" target="content" />-->
+  </files>
+</package>

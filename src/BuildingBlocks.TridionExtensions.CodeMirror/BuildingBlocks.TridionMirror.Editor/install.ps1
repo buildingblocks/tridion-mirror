@@ -1,3 +1,12 @@
+[CmdletBinding()]
+param(
+	[string]$tridionInstallLocation = "C:\Program Files (x86)\Tridion\",
+	[string]$iisWebsiteName = "SDL Tridion",
+	[string]$name = ""
+)
+
+$ErrorActionPreference = "Stop"
+
 Write-Host "********************************************************************"
 Write-Host "*           Tridion GUI Extensions Installer 1.2                   *"
 Write-Host "*                                                                  *"
@@ -20,18 +29,9 @@ Write-Host "********************************************************************
 
 # import various stuff we need
 Import-Module webadministration
-
 [Reflection.Assembly]::LoadWithpartialName("System.Xml.Linq") | Out-Null
-[string]$name = Read-Host "What is the name of the GUI Extension?"
 
 #************* Editor - Get Install location *******************
-$tridionInstallLocationUser = Read-Host "Where is Tridion installed? (Default is C:\Program Files (x86)\Tridion)"
-[string]$tridionInstallLocation = "C:\Program Files (x86)\Tridion\"
-
-if($tridionInstallLocationUser -ne "")
-{
-    $tridionInstallLocation = $tridionInstallLocationUser
-}
 
 [string]$editorInstallLocation = $tridionInstallLocation + "web\WebUI\Editors\" + $name
 if(Test-Path model -pathType container)
@@ -96,21 +96,15 @@ $server.SetAttribute("modification", $modificationNumber + 1)
 $conf.Save($filename)
 
 #************* Update IIS *******************  
-# Create VDIR in Tridion/WebUI/Editors and Models  2011 / 2013 need input 
-#  $tridionVersion = Read-Host "Which version of Tridion do you use? (2011 or 2013.  Default is 2013)"
-#  if(($tridionVersion -ne "2011") -and($tridionVersion -ne "2013"))
-#  {
-#        $tridionVersion = "2013"
-#  }
-  
-  $vdirPathEditor = 'IIS:\Sites\SDL Tridion\WebUI\Editors\' + $name 
+
+  $vdirPathEditor = "IIS:\Sites\$iisWebsiteName\WebUI\Editors\$name"
   Write-Host "Creating IIS Editor Virtual Directory at " $vdirPathEditor " with physical location at " $editorInstallLocation
   New-Item $vdirPathEditor -type VirtualDirectory -physicalPath $editorInstallLocation -force
 
   # Model
   if($hasModel)
   {
-          $vdirPathModel = 'IIS:\Sites\SDL Tridion\WebUI\Models\' + $name 
+          $vdirPathModel = "IIS:\Sites\$iisWebsiteName\WebUI\Models\$name"
           Write-Host "Creating IIS Model Virtual Directory at " + $vdirPathModel
           New-Item $vdirPathModel -type VirtualDirectory -physicalPath $modelInstallLocation
   }
@@ -119,19 +113,23 @@ $conf.Save($filename)
 if(Test-Path bin -pathType container)
 {
         $webRootBin = $tridionInstallLocation + "\web\WebUI\WebRoot\bin"        
-        Write-Host "Copying items to " + $webRoot
         Copy-Item -Path "bin\*" $webRootBin -recurse
 }
 
 #************* Editor - Copy Editor and Model files *******************  
 # Clean editor directory first
-Remove-Item $editorInstallLocation\*  -recurse -force
+if(Test-Path $editorInstallLocation)
+{
+	Remove-Item $editorInstallLocation\*  -recurse -force
+}
+
 Copy-Item -Path ".\Editor" $editorInstallLocation -recurse -force
 
 if($hasModel)
 {
+	Remove-Item $modelInstallLocation\*  -recurse -force
     Copy-Item -Path ".\Model" $modelInstallLocation -recurse -force
 }
        
 Write-Host "============================================"
-Write-Host "Done"
+Write-Host "Successfully installed $name"

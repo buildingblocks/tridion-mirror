@@ -102,6 +102,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="call_install.bat" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
