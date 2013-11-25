@@ -6,12 +6,12 @@ module.exports = function(grunt) {
         compress: {
             main: {
                 options: {
-                    archive: './bin/CodeMirror_Release.zip',
+                    archive: './bin/tridion-mirror.zip',
                     mode: 'zip'
                 },
                 cwd: 'src',
                 expand: true,
-                src: ['**/*'],
+                src: ['BuildingBlocks.TridionExtensions.TridionMirror/BuildingBlocks.TridionExtensions.TridionMirror/**/*'],
                 dest: '.'
             }
         }

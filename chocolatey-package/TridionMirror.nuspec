@@ -10,8 +10,8 @@
     <description>An extension which adds Code Mirror (codemirror.net) Syntax Highlighting to the SDL Tridion 2011/2013 Source tab with a button to enable or disable.</description>
     <projectUrl>http://github.com/buildingblocks/tridion-mirror</projectUrl>
     <tags>SDL Tridion admin syntax highlighting code mirror</tags>
-    <copyright></copyright>
-    <licenseUrl></licenseUrl>
+    <copyright>Building Blocks 2013</copyright>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <!--<iconUrl>https://raw.github.com/__CHOCO_PKG_OWNER_REPO__/master/__NAME__/__NAME__.png</iconUrl>-->
     <!--<dependencies>
@@ -21,6 +21,6 @@
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
-    <!--<file src="content\**" target="content" />-->
+    <file src="content\**" target="content" />
   </files>
 </package>

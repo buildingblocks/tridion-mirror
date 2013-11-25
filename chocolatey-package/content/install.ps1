@@ -47,8 +47,6 @@ if($hasModel)
 Write-Host "Installing GUI Extension Editor to " + $editorInstallLocation
 
 #************* Editor - Update Config *******************
-$scriptPath = Split-Path -parent $PSCommandPath
-
 $editorConfigFile = "Editor\Configuration\editor.config"
 $modelConfigFile = "Editor\Configuration\model.config"
 
@@ -120,18 +118,17 @@ if(Test-Path bin -pathType container)
 
 #************* Editor - Copy Editor and Model files *******************  
 # Clean editor directory first
-$editorPath = Join-Path -Path $scriptPath -ChildPath ".\Editor"
 if(Test-Path $editorInstallLocation)
 {
 	Remove-Item $editorInstallLocation\*  -recurse -force
 }
-Copy-Item -Path $editorPath $editorInstallLocation -recurse -force
+
+Copy-Item -Path ".\Editor" $editorInstallLocation -recurse -force
 
 if($hasModel)
 {
-	$modelPath = Join-Path -Path $scriptPath -ChildPath ".\Model"
 	Remove-Item $modelInstallLocation\*  -recurse -force
-    Copy-Item -Path $modelPath $modelInstallLocation -recurse -force
+    Copy-Item -Path ".\Model" $modelInstallLocation -recurse -force
 }
        
 Write-Host "============================================"

@@ -78,12 +78,6 @@ BuildingBlocks.CodemirrorExtension.EnableCodeMirror.prototype._isEnabled = funct
             alert("Mode not recognised by CodeMirror - defaulting to XML");
             mode = "xml";
         }
-        if (mode === "dreamweaver") {
-            this.CodeArea.setOption("extraKeys", { "Ctrl-Space": "autocomplete" });
-        }
-        else {
-            this.CodeArea.setOption("extraKeys", {});
-        }
         this.CodeArea.setOption("mode", mode);
         console.log("changed mode to " + mode);
     }
@@ -117,12 +111,9 @@ BuildingBlocks.CodemirrorExtension.EnableCodeMirror.prototype._execute = functio
         smartIndent: true,
         onChange: function (editor) {
             editor.save();
-        }
+        },
+        extraKeys: { "Ctrl-Space": "autocomplete" }
     });
-    if(mode === "dreamweaver")
-    {
-        this.CodeArea.setOption("extraKeys", { "Ctrl-Space": "autocomplete" });
-    }
     this.CodeArea.setOption("mode", mode);
     $('.EnableCodeMirror .text').textContent = 'Disable Code Mirror';
     $('#Wordwrap').disabled = true;

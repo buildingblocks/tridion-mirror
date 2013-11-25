@@ -136,8 +136,11 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>REM del "%25TRIDION_HOME%25\WebUI\Editors\CodeMirror\*.*" /ys
-xcopy "$(ProjectDir)*.*" "%25TRIDION_HOME%25\web\WebUI\Editors\CodeMirror\" /ysi</PostBuildEvent>
+    <PostBuildEvent>rmdir $(SolutionDir)..\..\node-module\lib /s /q
+xcopy "$(ProjectDir)Editor\*.*" "$(SolutionDir)..\..\node-module\lib\Editor" /ysi
+xcopy "$(ProjectDir)install.ps1" "$(SolutionDir)..\..\node-module\lib\" /ysi
+xcopy "$(SolutionDir)..\..\README.md" "$(SolutionDir)..\..\node-module\" /ysi
+</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

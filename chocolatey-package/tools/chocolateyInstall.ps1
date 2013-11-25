@@ -1,6 +1,7 @@
 try {
-	Install-ChocolateyZipPackage 'TridionMirror' 'http://www.electricbiro.com/tridion-mirror.zip' "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-  
+	#Install-ChocolateyZipPackage 'TridionMirror' 'http://www.electricbiro.com/tridion-mirror.zip' "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+	$psFile = Join-Path "$(Split-Path -parent $MyInvocation.MyCommand.Definition)" '..\content\install.ps1'
+	Start-ChocolateyProcessAsAdmin "& $psFile -name CodeMirror"
 	Write-ChocolateySuccess 'TridionMirror'
 } catch {
   Write-ChocolateyFailure 'TridionMirror' "$($_.Exception.Message)"
@@ -18,7 +19,7 @@ try {
  
   # other helpers - using any of these means you want to uncomment the error handling up top and at bottom.
   # downloader that the main helpers use to download items
-  Get-ChocolateyWebFile '__NAME__' 'DOWNLOAD_TO_FILE_FULL_PATH' 'URL'
+  #Get-ChocolateyWebFile '__NAME__' 'DOWNLOAD_TO_FILE_FULL_PATH' 'URL'
   # installer, will assert administrative rights - used by Install-ChocolateyPackage
   #Install-ChocolateyInstallPackage '__NAME__' 'EXE_OR_MSI' 'SILENT_ARGS' '_FULLFILEPATH_'
   # unzips a file to the specified location - auto overwrites existing content
