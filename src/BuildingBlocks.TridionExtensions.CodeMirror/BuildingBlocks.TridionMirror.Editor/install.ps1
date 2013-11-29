@@ -2,7 +2,7 @@
 param(
 	[string]$tridionInstallLocation = "C:\Program Files (x86)\Tridion\",
 	[string]$iisWebsiteName = "SDL Tridion",
-	[string]$name = ""
+	[string]$name = "CodeMirror"
 )
 
 $ErrorActionPreference = "Stop"
@@ -44,17 +44,23 @@ if($hasModel)
     [string]$modelInstallLocation = $tridionInstallLocation + "web\WebUI\Models\" + $name
 }
 
-Write-Host "Installing GUI Extension Editor to " + $editorInstallLocation
+Write-Host "Installing GUI Extension Editor to $editorInstallLocation"
 
 #************* Editor - Update Config *******************
 $scriptPath = Split-Path -parent $PSCommandPath
-
+Write-Host "Script path is $scriptPath"
 $editorConfigFile = "Editor\Configuration\editor.config"
+Write-Host "editorConfigFile is $editorConfigFile"
 $modelConfigFile = "Editor\Configuration\model.config"
+Write-Host "modelConfigFile path is $modelConfigFile"
 
 # Update System.config
 $filename = $tridionInstallLocation + '\web\WebUI\WebRoot\Configuration\System.config'
+Write-Host "filename is $filename"
+
 $conf = [xml](gc $filename)
+
+Write-Host "Opened System.config"
   
 [System.Xml.XmlNamespaceManager] $nsm = new-object System.Xml.XmlNamespaceManager $conf.NameTable
 $nsm.AddNamespace("x", "http://www.sdltridion.com/2009/GUI/Configuration")
@@ -63,6 +69,7 @@ $nsm.AddNamespace("x", "http://www.sdltridion.com/2009/GUI/Configuration")
 $editorNodeExists = @($conf.Configuration.editors.editor.name) -contains $name
 if(!$editorNodeExists)
 {
+	Write-Host "Adding Editor element"
 	$editors = [System.Xml.XmlElement]$conf.Configuration.editors
 	$myElement = $conf.CreateElement("editor", $nsm.LookupNamespace("x"))
 	$nameAttr = $myElement.SetAttribute("name", $name)
@@ -78,6 +85,7 @@ else
 $modelNodeExists = @($conf.Configuration.editors.editor.name) -contains $name
 if($hasModel -and (!$modelNodeExists))
 {
+	Write-Host "Adding Model Element"
 	$models = [System.Xml.XmlElement]$conf.Configuration.models
 	$myModelElement = $conf.CreateElement("model", $nsm.LookupNamespace("x"))
 	$nameAttr = $myModelElement.SetAttribute("name", $name)
@@ -88,34 +96,63 @@ elseif($existingModelNode -ne $null)
 {
 	Write-Host "Model node already exists in System.config with name $name, skipping"
 }
-  
+
+Write-Host "Updating modification"
+
 # Update modification number to reload JavaScript
 # <server version="7.0.0.568" modification="15">
 $server = [System.Xml.XmlElement]$conf.Configuration.servicemodel.server
 $modificationNumber = [int]$server.GetAttribute("modification")
 $server.SetAttribute("modification", $modificationNumber + 1)
 
+Write-Host "Saving System.config"
 $conf.Save($filename)
 
 #************* Update IIS *******************  
+if(Test-Path "IIS:\Sites\$iisWebsiteName")
+{
+	Write-Host "Using iisWebsiteName = $iisWebsiteName"
+}
+else
+{
+	# Figure out IIS Website name
+	$iisWebsiteName = "SDL Tridion 2011"
+	if(Test-Path "IIS:\Sites\$iisWebsiteName" -eq False)
+	{
+		Write-Host "$iisWebsiteName is IIS Website name"
+	}
+	else
+	{
+		$iisWebsiteName = "SDL Tridion 2013"
+		if(Test-Path "IIS:\Sites\$iisWebsiteName")
+		{	
+			Write-Host "SDL Tridion 2013 is IIS Website name"
+		}
+		else
+		{
+			Throw "Could not find SDL Tridion Website, please adjust script with correct website name"
+		}
+	}
+}
 
-  $vdirPathEditor = "IIS:\Sites\$iisWebsiteName\WebUI\Editors\$name"
-  Write-Host "Creating IIS Editor Virtual Directory at " $vdirPathEditor " with physical location at " $editorInstallLocation
-  New-Item $vdirPathEditor -type VirtualDirectory -physicalPath $editorInstallLocation -force
+$vdirPathEditor = "IIS:\Sites\$iisWebsiteName\WebUI\Editors\$name"
 
-  # Model
-  if($hasModel)
-  {
-          $vdirPathModel = "IIS:\Sites\$iisWebsiteName\WebUI\Models\$name"
-          Write-Host "Creating IIS Model Virtual Directory at " + $vdirPathModel
-          New-Item $vdirPathModel -type VirtualDirectory -physicalPath $modelInstallLocation
-  }
+Write-Host "Creating IIS Editor Virtual Directory at " $vdirPathEditor " with physical location at " $editorInstallLocation
+New-Item $vdirPathEditor -type VirtualDirectory -physicalPath $editorInstallLocation -force
+
+# Model
+if($hasModel)
+{
+    $vdirPathModel = "IIS:\Sites\$iisWebsiteName\WebUI\Models\$name"
+    Write-Host "Creating IIS Model Virtual Directory at " + $vdirPathModel
+    New-Item $vdirPathModel -type VirtualDirectory -physicalPath $modelInstallLocation
+}
   
 #************* Editor - Copy DLLs ******************* 
 if(Test-Path bin -pathType container)
 {
-        $webRootBin = $tridionInstallLocation + "\web\WebUI\WebRoot\bin"        
-        Copy-Item -Path "bin\*" $webRootBin -recurse
+    $webRootBin = $tridionInstallLocation + "\web\WebUI\WebRoot\bin"        
+    Copy-Item -Path "bin\*" $webRootBin -recurse
 }
 
 #************* Editor - Copy Editor and Model files *******************  
@@ -123,14 +160,19 @@ if(Test-Path bin -pathType container)
 $editorPath = Join-Path -Path $scriptPath -ChildPath ".\Editor"
 if(Test-Path $editorInstallLocation)
 {
-	Remove-Item $editorInstallLocation\*  -recurse -force
+	Write-Host "Existing Model found at $editorInstallLocation"
+	Remove-Item $editorInstallLocation\*  -recurse -confirm
 }
 Copy-Item -Path $editorPath $editorInstallLocation -recurse -force
 
 if($hasModel)
 {
 	$modelPath = Join-Path -Path $scriptPath -ChildPath ".\Model"
-	Remove-Item $modelInstallLocation\*  -recurse -force
+	if(Test-Path $modelInstallLocation)
+	{
+		Write-Host "Existing Model found at $modelInstallLocation"
+		Remove-Item $modelInstallLocation\*  -recurse -confirm
+	}
     Copy-Item -Path $modelPath $modelInstallLocation -recurse -force
 }
        

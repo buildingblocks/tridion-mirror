@@ -139,7 +139,6 @@
     <PostBuildEvent>rmdir $(SolutionDir)..\..\node-module\lib /s /q
 xcopy "$(ProjectDir)Editor\*.*" "$(SolutionDir)..\..\node-module\lib\Editor" /ysi
 xcopy "$(ProjectDir)install.ps1" "$(SolutionDir)..\..\node-module\lib\" /ysi
-xcopy "$(SolutionDir)..\..\README.md" "$(SolutionDir)..\..\node-module\" /ysi
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
