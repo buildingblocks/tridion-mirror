@@ -1,6 +1,6 @@
 {
   "name": "code-mirror-tridion",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "An SDL Tridion 2011/2013 extension that adds Syntax Highlighting to the source tab using CodeMirror. Note this package does not contain a Node module.",
   "scripts": {
 	"postinstall" : "node bin/install.js",
